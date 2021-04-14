@@ -21,7 +21,7 @@
 	  		<h1 class="text-center pb-5 display-4">LOGIN</h1>
 	  		<?php if (isset($_GET['error'])) { ?>
 	  		<div class="alert alert-danger" role="alert">
-			  <?=$_GET['error']?>
+			  <?=htmlspecialchars($_GET['error'])?>
 			</div>
 		    <?php } ?>
 		  <div class="mb-3">
@@ -30,6 +30,7 @@
 		    </label>
 		    <input type="email" 
 		           name="email" 
+		           value="<?php if(isset($_GET['email']))echo(htmlspecialchars($_GET['email'])) ?>" 
 		           class="form-control" 
 		           id="exampleInputEmail1" aria-describedby="emailHelp">
 		  </div>
